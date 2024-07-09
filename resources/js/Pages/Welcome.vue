@@ -10,7 +10,7 @@ import Navbar from "@/Components/Navbar.vue";
     <Navbar />
                 <main>
                     <div class="text-center max-w-5xl mx-auto">
-                        <div class="mt-20 mb-20 flex flex-col justify-center text-center items-center">
+                        <div class="mt-20 mb-20 flex flex-col md:flex-row justify-center text-center items-center">
                             <div class="order-last md:order-first flex flex-col md:w-1/2 justify-center items-center text-center mb-10">
                                 <h1 class="text-2xl md:text-3xl items-center text-center font-bold">Multiple Links for your link in bio</h1>
                                 <p class="text-lg md:text-xl mt-6">Create your landing page in just 5 minutes.</p>

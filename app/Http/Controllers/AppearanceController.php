@@ -15,7 +15,7 @@ class AppearanceController extends Controller
     {
         // Verifica si el usuario está autenticado
         if (!Auth::check()) {
-            // Redirige al login o muestra un error adecuado
+            // Redirige al login si el usuario no está autenticado
             return redirect()->route('login')->withErrors('You must be logged in to access this page.');
         }
 
@@ -25,8 +25,8 @@ class AppearanceController extends Controller
 
         // Verifica si el usuario tiene una apariencia
         if (!$appearance) {
-            // Muestra un error adecuado o redirige
-            return redirect()->route('some.route')->withErrors('Appearance not found for the user.');
+            // Redirige a una página específica si no se encuentra la apariencia
+            return redirect()->route('appearances.create')->withErrors('Appearance not found for the user.');
         }
 
         // Obtén los enlaces del usuario

@@ -16,7 +16,7 @@ import Footer from "@/Components/Footer.vue";
                                 <a href="/links" class="mt-6 btn bg-neutral text-white">Create My Landing Page</a>
                             </div>
                             <div class="w-1/2 flex justify-center">
-                                <img src="/images/phone.png" class="h-[26rem]"/>
+                                <img src="/images/phone.png" class="md:h-[26rem]"/>
                             </div>
                             
                         </div>
@@ -28,14 +28,14 @@ import Footer from "@/Components/Footer.vue";
                                     <p>Offer multiple choices to your followers when they click on your Bio link. Share all your Social Media profiles and important links with just one url.</p>
                                 </div>
                                 <div class="w-1/2 flex items-center text-center justify-center">
-                                    <img src="/images/mobile-2.png" class="h-[32rem]" />
+                                    <img src="/images/mobile-2.png" class="md:h-[32rem]" />
                                 </div>
                             </div>
 
 
                             <div class="w-full mt-6 mb-6 flex items-center text-center justify-center">
                                 <div class="w-1/2 flex items-center text-center justify-center">
-                                    <img src="/images/mobile-2.png" class="h-[32rem]" />
+                                    <img src="/images/mobile-2.png" class="md:h-[32rem]" />
                                 </div>
                                 <div class="w-1/2 text-center justify-center ml-14 mr-14">
                                     <h2 class="text-2xl font-bold mb-6">Quick & Easy To Use</h2>
@@ -55,8 +55,8 @@ import Footer from "@/Components/Footer.vue";
     
                                         <div class="flex text-center items-center mb-6">
                                            <div class="flex flex-col text-center items-center justify-center">
-                                            <h3 class="flex font-bold text-center items-center text-lg">Personal Url</h3>
-                                            <p class="flex">Create your personal Url and place it in your Instagram Bio.</p>
+                                            <h3 class="flex mr-4 md:mr-0 font-bold text-center items-center text-lg">Personal Url</h3>
+                                            <p class="flex hidden md:flex">Create your personal Url and place it in your Instagram Bio.</p>
                                            </div>
                                         <div class="flex justify-center items-center">
                                             <div class="flex justify-center items-center border rounded-full p-2 bg-blue-100">
@@ -69,8 +69,8 @@ import Footer from "@/Components/Footer.vue";
 
                                         <div class="flex text-center items-center mb-6">
                                            <div class="flex flex-col text-center items-center justify-center">
-                                            <h3 class="flex font-bold text-center items-center text-lg">Unlimited Links</h3>
-                                            <p class="flex">Add as many links as you wish, change them as often as you want.</p>
+                                            <h3 class="flex  mr-4 md:mr-0 font-bold text-center items-center text-lg">Unlimited Links</h3>
+                                            <p class="flex hidden md:flex">Add as many links as you wish, change them as often as you want.</p>
                                            </div>
                                         <div class="flex justify-center items-center">
                                             <div class="flex justify-center items-center border rounded-full p-2 bg-blue-100">
@@ -84,8 +84,8 @@ import Footer from "@/Components/Footer.vue";
 
                                         <div class="flex text-center items-center mb-6">
                                            <div class="flex flex-col text-center items-center justify-center">
-                                            <h3 class="flex font-bold text-center items-center text-lg">Elegant And Perfect</h3>
-                                            <p class="flex">With a cutting-edge interface, followers clicking on your Url will experience a great visual.</p>
+                                            <h3 class="flex font-bold  mr-4 md:mr-0 text-center items-center text-lg">Elegant And Perfect</h3>
+                                            <p class="flex hidden md:flex">With a cutting-edge interface, followers clicking on your Url will experience a great visual.</p>
                                            </div>
                                         <div class="flex justify-center items-center">
                                             <div class="flex justify-center items-center border rounded-full p-2 bg-blue-100">
@@ -103,7 +103,7 @@ import Footer from "@/Components/Footer.vue";
                                     </div>
                                 </div>
                                 <div class="w-1/3 flex text-center items-center justify-center">
-                                    <img src="/images/mobile-2.png" class="h-128" />
+                                    <img src="/images/mobile-2.png" class="md:h-128" />
                                 </div>
 
 
@@ -122,8 +122,8 @@ import Footer from "@/Components/Footer.vue";
                                             </div>
                                         </div>
                                            <div class="flex flex-col text-center items-center justify-center">
-                                            <h3 class="flex font-bold text-center items-center text-lg">Safe</h3>
-                                            <p class="flex">You can only add your links.</p>
+                                            <h3 class="flex font-bold  ml-4 md:ml-0 text-center items-center text-lg">Safe</h3>
+                                            <p class="flex hidden md:flex">You can only add your links.</p>
                                            </div>
                                         </div>
 
@@ -137,8 +137,8 @@ import Footer from "@/Components/Footer.vue";
                                             </div>
                                         </div>
                                            <div class="flex flex-col text-center items-center justify-center">
-                                            <h3 class="flex font-bold text-center items-center text-lg">Social First</h3>
-                                            <p class="flex">Cross-link all your social profiles and optimize the engagement across your different channels.</p>
+                                            <h3 class="flex font-bold  ml-4 md:ml-0 text-center items-center text-lg">Social First</h3>
+                                            <p class="flex hidden md:flex">Cross-link all your social profiles and optimize the engagement across your different channels.</p>
                                            </div>
                                         </div>
 
@@ -152,18 +152,11 @@ import Footer from "@/Components/Footer.vue";
                                             </div>
                                         </div>
                                            <div class="flex flex-col text-center items-center justify-center">
-                                            <h3 class="flex font-bold text-center items-center text-lg">All in Web</h3>
-                                            <p class="flex">No need to install anything, just access anytime via browser from any device.</p>
+                                            <h3 class="flex font-bold  ml-4 md:ml-0 text-center items-center text-lg">All in Web</h3>
+                                            <p class="flex hidden md:flex">No need to install anything, just access anytime via browser from any device.</p>
                                            </div>
                                         </div>
-
-                                        
-
-                                        
-                                    </div>
-                             
-
-                                        
+                                    </div>          
                                 </div>
                             </div>
                         </div>

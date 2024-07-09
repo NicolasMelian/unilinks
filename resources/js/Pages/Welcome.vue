@@ -8,18 +8,17 @@ import Footer from "@/Components/Footer.vue";
     <Head title="Home" />
                 <main>
                     <div class="text-center max-w-5xl mx-auto">
-                        <div class="mt-20 mb-20 flex justify-center text-center">
-
-                            <div class="flex flex-col w-1/2 justify-center items-center text-center">
-                                <h1 class="text-3xl items-center text-center font-bold">Multiple Links for your link in bio</h1>
-                                <p class="text-xl mt-6">Create your landing page in just 5 minutes.</p>
+                        <div class="mt-20 mb-20 flex flex-col justify-center text-center items-center">
+                            <div class="order-last md:order-first flex flex-col md:w-1/2 justify-center items-center text-center mb-10">
+                                <h1 class="text-2xl md:text-3xl items-center text-center font-bold">Multiple Links for your link in bio</h1>
+                                <p class="text-lg md:text-xl mt-6">Create your landing page in just 5 minutes.</p>
                                 <a href="/links" class="mt-6 btn bg-neutral text-white">Create My Landing Page</a>
                             </div>
-                            <div class="w-1/2 flex justify-center">
-                                <img src="/images/phone.png" class="md:h-[26rem]"/>
+                            <div class="order-first md:order-last mb-6 w-2/3 md:w-1/2 flex justify-center">
+                                <img src="/images/phone.png" class="h-[16rem] md:h-[26rem]"/>
                             </div>
-                            
                         </div>
+
 
                         <div class="text-center mt-6 mb-6">
                             <div class="w-full flex items-center text-center justify-center">

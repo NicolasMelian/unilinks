@@ -13,30 +13,33 @@ class AppearanceController extends Controller
 {
     public function index()
     {
-        // Verifica si el usuario está autenticado
-        if (!Auth::check()) {
-            // Redirige al login si el usuario no está autenticado
+        $user = Auth::user();
+        
+        if (!$user) {
             return redirect()->route('login')->withErrors('You must be logged in to access this page.');
         }
-
-        // Obtén el usuario autenticado
-        $user = Auth::user();
+    
         $appearance = $user->appearance;
-
-        // Verifica si el usuario tiene una apariencia
+    
+        // Si el usuario no tiene una apariencia, crea una nueva
         if (!$appearance) {
-            // Redirige a una página específica si no se encuentra la apariencia
-            return redirect()->route('appearances.create')->withErrors('Appearance not found for the user.');
+            $appearance = Appearance::create([
+                'user_id' => $user->id,
+                'slug' => Str::random(40),
+                'profile_title' => 'Default Title',  // Puedes personalizar estos valores por defecto
+                'bio' => '',
+                'theme' => 'theme1',
+            ]);
         }
-
-        // Obtén los enlaces del usuario
+    
         $links = $user->links;
-
+    
         return Inertia::render('Appearance', [
             'appearance' => $appearance,
             'links' => $links,
         ]);
     }
+    
 
     public function store(Request $request)
     {

@@ -1,11 +1,13 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import Footer from "@/Components/Footer.vue";
+import Navbar from "@/Components/Navbar.vue";
 
 </script>
 
 <template>
     <Head title="Home" />
+    <Navbar />
                 <main>
                     <div class="text-center max-w-5xl mx-auto">
                         <div class="mt-20 mb-20 flex flex-col justify-center text-center items-center">

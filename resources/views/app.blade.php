@@ -21,27 +21,6 @@
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
-        @if (!request()->routeIs('landing.show'))
-
-        <div class="max-w-4xl mx-auto navbar bg-base-100">
-            <div class="flex-1">
-              <a href="/" class="flex justify-center items-center"><img class="h-9 w-9 mr-1" src="/icon.png" /><h1 class="text-xl font-bold text-black">Unilinks.bio</h1></a>
-            </div>
-            <div class="flex-none">
-              <ul class="menu menu-horizontal px-1">
-                @guest
-                  <li><a href="/register">Register</a></li>
-                  <li><a href="/login">Login</a></li>
-                @endguest
-                @auth
-                  <li><a href="/links">Links</a></li>
-                  <li><a href="/appearance">Appearance</a></li>
-                @endauth
-              </ul>
-            </div>
-          </div>
-          @endif
-          
         @inertia
     </body>
 </html>

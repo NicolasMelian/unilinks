@@ -1,4 +1,6 @@
 <template>
+  <Head :title="appearance.profile_title" />
+
   <div :class="themeClass" class="flex items-center flex-col h-screen justify-center mx-auto">
     <div class="text-center">
         <img :src="appearance.profile_image" class="w-24 h-24 rounded-full object-cover mx-auto" alt="Profile Image">
@@ -24,7 +26,7 @@
   
   <script setup>
   import { computed } from 'vue'
-  import { usePage } from '@inertiajs/vue3'
+  import { usePage, Head } from '@inertiajs/vue3'
   
   const page = usePage()
   const appearance = computed(() => page.props.appearance)

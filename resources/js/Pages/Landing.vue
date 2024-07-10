@@ -1,8 +1,6 @@
 <template>
   <Head :title="appearance.profile_title" />
 
-  <Navbar />
-
   <div :class="themeClass" class="flex items-center flex-col h-screen justify-center mx-auto">
     <div class="text-center">
         <img :src="appearance.profile_image" class="w-24 h-24 rounded-full object-cover mx-auto" alt="Profile Image">

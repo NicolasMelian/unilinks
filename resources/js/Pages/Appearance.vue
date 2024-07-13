@@ -1,4 +1,6 @@
 <template>
+      <Head title="Appearance" />
+
       <Navbar />
 
   <div class="flex flex-col max-w-5xl flex-row mx-auto justify-center mt-10 mb-20">
@@ -86,7 +88,8 @@
   <script setup>
   import { useForm, usePage } from '@inertiajs/vue3'
   import { computed, watch } from 'vue'
-import Navbar from "@/Components/Navbar.vue";
+  import { Head } from '@inertiajs/vue3';
+  import Navbar from "@/Components/Navbar.vue";
   
   const page = usePage()
   const appearance = computed(() => page.props.appearance)

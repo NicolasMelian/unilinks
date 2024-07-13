@@ -1,4 +1,5 @@
 <template>    
+  <Head title="Links" />
   <Navbar />
     <div class="flex flex-col py-10 text-center justify-center mx-auto max-w-4xl">
       <h1 class="text-2xl mt-6 mb-6 font-bold">Links</h1>
@@ -89,6 +90,7 @@
 import { useForm, usePage, router } from '@inertiajs/vue3'
 import { computed, ref } from 'vue'
 import Navbar from "@/Components/Navbar.vue";
+import { Head } from '@inertiajs/vue3';
 
 const page = usePage()
 const user = computed(() => page.props.auth.user)

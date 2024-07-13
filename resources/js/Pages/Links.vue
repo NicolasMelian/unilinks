@@ -92,7 +92,7 @@ import Navbar from "@/Components/Navbar.vue";
 
 const page = usePage()
 const user = computed(() => page.props.auth.user)
-const links = computed(() => user.value ? user.value.links : [])
+const links = computed(() => page.props.links) // Asume que los enlaces se pasan como prop
 
 const form = useForm({
   name: '',
@@ -165,6 +165,7 @@ function cancelEdit() {
 }
 
 function refreshLinks() {
-  page.props.links = user.value.links
+ page.props.links
+
 }
 </script>

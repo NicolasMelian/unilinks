@@ -122,9 +122,10 @@ import Navbar from "@/Components/Navbar.vue";
 
                                             </div>
                                         </div>
+
                                            <div class="flex flex-col text-center items-center justify-center">
                                             <h3 class="flex font-bold  ml-4 md:ml-0 text-center items-center text-lg">Safe</h3>
-                                            <p class="flex hidden md:flex">You can only add your links.</p>
+                                            <p class="flex hidden md:flex">You are the only personan that can add links and edit your landing page.</p>
                                            </div>
                                         </div>
 

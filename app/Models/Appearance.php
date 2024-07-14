@@ -16,6 +16,7 @@ class Appearance extends Model
         'profile_title',
         'bio',
         'theme',
+        'custom_background_image',
     ];
 
     public function user(){

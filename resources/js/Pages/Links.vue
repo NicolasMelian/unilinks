@@ -3,6 +3,7 @@
   <Navbar />
     <div class="flex flex-col py-10 text-center justify-center mx-auto max-w-4xl">
       <h1 class="text-2xl mt-6 mb-6 font-bold">Links</h1>
+      <p class="mb-8 text-lg">Enter the links you want to appear on your landing page.</p>
       <div class="w-full">
         <form @submit.prevent="submit" class="flex justify-center items-center gap-2">
           
@@ -39,9 +40,9 @@
       </div>
 
   
-      <div class=" mt-16 w-full items-center justify-center">
+      <div class="mt-20 w-full items-center justify-center">
         <div v-if="user">
-          <p class="text-lg font-bold mb-6">Your Links:</p>
+          <p class="text-xl font-bold mb-6">Your Links:</p>
           <ul>
             <li v-for="link in links" :key="link.id">
               <div v-if="editingLinkId === link.id" class="flex flex-col items-center justify-center mx-auto">
@@ -62,7 +63,7 @@
   
               <div v-else class="flex mb-6">
 
-              <div class="flex ml-24 w-full gap-2 items-center">
+              <div class="flex w-full gap-2 items-center">
                 <img v-if="link.image" :src="link.image" class="w-16 h-16 rounded-full object-cover" alt="Link Image">
                 <p class="mr-4 ml-2">{{ link.name }}</p>
                 <a :href="link.url" class="mr-4">{{ link.url }}</a>
@@ -71,7 +72,7 @@
 
                 <div class="flex items-center mr-2">
                   <button @click="editLink(link)" class="btn btn-outline mr-3">Edit</button>
-                  <button @click="deleteLink(link.id)" class="btn btn-error">Delete</button>
+                  <button @click="deleteLink(link.id)" class="btn text-white btn-error">Delete</button>
                 </div>
               </div>
             </li>
@@ -83,7 +84,7 @@
       </div>
     </div>
 
-
+    <Footer />
   </template>
   
 <script setup>
@@ -91,6 +92,7 @@ import { useForm, usePage, router } from '@inertiajs/vue3'
 import { computed, ref } from 'vue'
 import Navbar from "@/Components/Navbar.vue";
 import { Head } from '@inertiajs/vue3';
+import Footer from '@/Components/Footer.vue';
 
 const page = usePage()
 const user = computed(() => page.props.auth.user)

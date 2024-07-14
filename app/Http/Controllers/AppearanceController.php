@@ -48,17 +48,24 @@ class AppearanceController extends Controller
             'profile_image' => 'nullable|image',
             'profile_title' => 'required|string|max:255',
             'bio' => 'nullable|string',
-            'theme' => 'nullable|string|in:theme1,theme2,theme3',
+            'theme' => 'nullable|string|in:theme1,theme2,theme3,custom', // Añadimos 'custom'
+            'custom_background_image' => 'nullable|image', // Nueva validación
         ]);
-
+    
         $appearanceData = $request->only(['slug', 'profile_title', 'bio', 'theme']);
-
+    
         if ($request->hasFile('profile_image')) {
             $filename = Str::random(40) . '.' . $request->file('profile_image')->getClientOriginalExtension();
             $path = $request->file('profile_image')->storeAs('images', $filename, 'public');
             $appearanceData['profile_image'] = 'storage/' . $path;
         }
-
+    
+        if ($request->hasFile('custom_background_image')) {
+            $filename = Str::random(40) . '.' . $request->file('custom_background_image')->getClientOriginalExtension();
+            $path = $request->file('custom_background_image')->storeAs('images', $filename, 'public');
+            $appearanceData['custom_background_image'] = 'storage/' . $path;
+        }
+    
         $user = Auth::user();
         if ($user->appearance) {
             $user->appearance->update($appearanceData);
@@ -66,10 +73,10 @@ class AppearanceController extends Controller
             $appearanceData['user_id'] = $user->id;
             Appearance::create($appearanceData);
         }
-
+    
         return redirect()->back()->with('success', 'Appearance saved successfully');
     }
-
+    
     public function update(Request $request, Appearance $appearance)
     {
         $request->validate([
@@ -77,23 +84,35 @@ class AppearanceController extends Controller
             'profile_image' => 'nullable|image',
             'profile_title' => 'nullable|string|max:255',
             'bio' => 'nullable|string',
-            'theme' => 'nullable|string|in:theme1,theme2,theme3',
+            'theme' => 'nullable|string|in:theme1,theme2,theme3,custom', // Añadimos 'custom'
+            'custom_background_image' => 'nullable|image', // Nueva validación
         ]);
-
+    
         $appearanceData = $request->only(['slug', 'profile_title', 'bio', 'theme']);
-
+    
         if ($request->hasFile('profile_image')) {
             if ($appearance->profile_image && file_exists(public_path($appearance->profile_image))) {
                 unlink(public_path($appearance->profile_image));
             }
-
+    
             $filename = Str::random(40) . '.' . $request->file('profile_image')->getClientOriginalExtension();
             $path = $request->file('profile_image')->storeAs('images', $filename, 'public');
             $appearanceData['profile_image'] = 'storage/' . $path;
         }
-
+    
+        if ($request->hasFile('custom_background_image')) {
+            if ($appearance->custom_background_image && file_exists(public_path($appearance->custom_background_image))) {
+                unlink(public_path($appearance->custom_background_image));
+            }
+    
+            $filename = Str::random(40) . '.' . $request->file('custom_background_image')->getClientOriginalExtension();
+            $path = $request->file('custom_background_image')->storeAs('images', $filename, 'public');
+            $appearanceData['custom_background_image'] = 'storage/' . $path;
+        }
+    
         $appearance->update($appearanceData);
-
+    
         return redirect()->back()->with('success', 'Appearance updated successfully');
     }
+    
 }

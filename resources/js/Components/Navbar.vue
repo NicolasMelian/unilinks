@@ -12,20 +12,40 @@
         <li v-if="!auth.user"><a href="/login">Login</a></li>
         <li v-if="auth.user"><a href="/links">Links</a></li>
         <li v-if="auth.user"><a href="/appearance">Appearance</a></li>
+        
+        <li>
+        <form v-if="auth.user" class="flex" @submit.prevent="logout">
+          <button class="mt-4 lg:inline-block lg:mt-0 hover:text-gray-600">Log out</button>
+        </form>
+      </li>
+
       </ul>
     </div>
   </div>
 </template>
 
-  
-  <script>
-  export default {
-    computed: {
-      auth() {
-        console.log(this.$page.props.auth); // Agrega esta línea para depuración
-        return this.$page.props.auth;
-      }
-    }
-  }
-  </script>
+<script setup>
+import { computed } from 'vue';
+import { usePage, router } from '@inertiajs/vue3';
+
+const { props } = usePage();
+const auth = computed(() => props.auth);
+
+const logout = async () => {
+    await router.post(
+        route("logout"),
+        {},
+        {
+            preserveState: false, // Esta opción fuerza a Inertia a recargar completamente el estado de la página
+            onSuccess: () => {
+                isAuthenticated.value = false; // Actualiza el estado de autenticación
+                router.replace("/"); // Opcional: redirige al usuario a la página de inicio de sesión
+            },
+        }
+    );
+};
+
+console.log(auth.value); // Agrega esta línea para depuración
+</script>
+
   

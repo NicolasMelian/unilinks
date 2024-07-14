@@ -6,7 +6,7 @@
     <a class="btn btn-neutral" :href="`/${appearance.slug}`">/{{appearance.slug}}</a>
   </div>
 
-  <div class="flex flex-col max-w-5xl flex-row mr-4 ml-4 mx-auto justify-center mt-10 mb-20">
+  <div class="flex flex-col max-w-5xl flex-row mx-auto justify-center mt-10 mb-20">
     <h1 class="text-2xl text-center items-center font-bold mb-8 mt-6">Appearance</h1>
 
     <div class="flex flex-col md:flex-row">
@@ -44,7 +44,7 @@
               <div v-for="theme in themes" :key="theme.name" class="theme-option">
                 <img :src="theme.image" @click="setTheme(theme.name)" :class="{'border-2 w-24 rounded border-primary-content': form.theme === theme.name}" class="w-24 h-24 object-cover cursor-pointer">
               </div>
-              
+
               <div class="theme-option w-24 h-24 bg-gray-100 border-2 border-dashed border-gray-300 rounded flex items-center justify-center relative cursor-pointer">
                 <input type="file" @change="uploadBackgroundImage" class="absolute inset-0 opacity-0 cursor-pointer"/>
                 <span v-if="!previewBackgroundImage" class="text-gray-500">+</span>

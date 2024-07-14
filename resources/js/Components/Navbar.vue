@@ -14,8 +14,8 @@
         <li v-if="auth.user"><a href="/appearance">Appearance</a></li>
         
         <li>
-        <form v-if="auth.user" class="flex" @submit.prevent="logout">
-          <button class="mt-4 lg:inline-block lg:mt-0 hover:text-gray-600">Log out</button>
+        <form v-if="auth.user" class="flex justify-center" @submit.prevent="logout">
+          <button class="mt-4 inline-block justify-center items-center mt-0 hover:text-gray-600">Log out</button>
         </form>
       </li>
 
